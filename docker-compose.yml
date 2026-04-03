@@ -12,5 +12,18 @@ services:
       - veyra_pgdata:/var/lib/postgresql/data
     restart: always
 
+  backend:
+    build: .
+    container_name: veyra_backend
+    ports:
+      - "8080:8080"
+    environment:
+      # Aktif profili 'dev' olarak bırakıyoruz ama DB adresini Docker network'e göre eziyoruz
+      - SPRING_PROFILES_ACTIVE=dev
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/veyra_db
+    depends_on:
+      - postgres
+    restart: always
+
 volumes:
   veyra_pgdata:

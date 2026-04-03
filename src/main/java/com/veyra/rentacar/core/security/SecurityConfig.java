@@ -50,6 +50,10 @@ public class SecurityConfig {
                                 "/api/v1/rentals/**",
                                 "/api/v1/users/me"
                         ).hasAnyRole("USER", "ADMIN")
+                        .requestMatchers(HttpMethod.GET,
+                                "/api/v1/users",
+                                "/api/v1/users/{id}"
+                        ).hasRole("ADMIN")
                         .requestMatchers(
                                 "/api/v1/admin/**",
                                 "/api/v1/dashboard/**",

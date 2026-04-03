@@ -1,9 +1,9 @@
 package com.veyra.rentacar.features.auth.controllers;
 
-import com.veyra.rentacar.features.auth.dto.request.LoginRequest;
-import com.veyra.rentacar.features.auth.dto.request.RegisterRequest;
-import com.veyra.rentacar.features.auth.dto.response.AuthResponse;
-import com.veyra.rentacar.features.auth.services.AuthService;
+import com.veyra.rentacar.features.auth.abstracts.AuthService;
+import com.veyra.rentacar.features.auth.dtos.requests.LoginRequest;
+import com.veyra.rentacar.features.auth.dtos.requests.RegisterRequest;
+import com.veyra.rentacar.features.auth.dtos.responses.AuthResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
